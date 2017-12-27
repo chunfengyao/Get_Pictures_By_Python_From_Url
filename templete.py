@@ -22,8 +22,10 @@ con.close()
 # tmpSql = '%s' % (sql % ('ycf_db.pictures',url,s))
 # print("本次执行的SQL语句为：%s" % (tmpSql))
 # a = bytearray(datas)
-# s = a.hex()
-# print(bytearray.fromhex(s))
+#转码-----往mysql存（原为16进制数组模式）
+s = a.hex()
+#解码-----转回16进制的数组模式
+print(bytearray.fromhex(s))
 
 # print(tmpstr.encode(""))
 # conn = pymysql.connect(host = 'localhost',db = 'ycf_db',user = "ycf",password = 'ycf')
