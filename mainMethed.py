@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
 import autoRobot
 import Tools
 import Pictures
 import base64
 import hashlib
 
+# reqUrl = r'http://www.qingzz.cn/ubuntu_myeclipseInstallCrack'
+# reqUrl = r'https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html'
 # reqUrl = r'http://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fr=&sf=1&fmq=1462357247335_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E9%AB%98%E6%B8%85%E5%8A%A8%E6%BC%AB'
 reqUrl = r'http://image.baidu.com/search/index?ct=201326592&cl=2&nc=1&lm=-1&st=-1&tn=baiduimage&istype=2&fm=&pv=&z=0&word=%C3%C8%B3%E8%CD%BC%C6%AC&fr=wenku&ie=gbk'
 # reqUrl = r'https://wenku.baidu.com/search?ie=utf-8&word=%E8%90%8C%E5%AE%A0%E5%9B%BE%E7%89%87'
@@ -16,6 +19,8 @@ urlLis = Tools.getPicUrlToList(reqUrl = reqUrl)
 urlLis = list(set(urlLis))
 # a = 0
 for i in urlLis:
+    #打印出图片链接
+    print(i)
     data = Tools.getTheSource(url=i,header=headers)
     if data is not None:
         #拿到二进制数据的哈希值
@@ -27,6 +32,6 @@ for i in urlLis:
             f.write(data)
 
         #将数据存入数据库
-        Tools.insertData(url=i,datas=data)
+        # Tools.insertData(url=i,datas=data)
         #打印调试信息
-        print("二进制编码数据：%s\n链接为：%s"%(data,i))
+        # print("二进制编码数据：%s\n链接为：%s"%(data.hex(),i))

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Pictures:
     #图片的二进制数据
     data = b''

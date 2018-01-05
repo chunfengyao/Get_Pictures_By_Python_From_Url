@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import Tools
 import Pictures
 class autoRobot:
